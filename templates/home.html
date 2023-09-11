@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p>Click the button below to create a new character:</p>
+    <button id="createCharacterButton">Create Character</button>
+
+    <script>
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    
+        const tokenFromURL = getUrlParameter("token");
+        console.log(tokenFromURL);
+    
+        const tokenFromCookie = getCookie("access_token");
+        console.log(tokenFromCookie);
+    
+        const token = tokenFromURL || tokenFromCookie;
+    
+        // Attach an event listener to the button
+        const createCharacterButton = document.getElementById("createCharacterButton");
+        createCharacterButton.addEventListener("click", createCharacter);
+    
+        function createCharacter() {
+            if (!token) {
+                alert("JWT token is missing.");
+                return;
+            }
+    
+            // Make a request to the /home route with the JWT token in the "Authorization" header
+            const xhrHome = new XMLHttpRequest();
+            xhrHome.open("GET", "/home");
+            xhrHome.setRequestHeader("Authorization", `Bearer ${token}`);
+            xhrHome.send();
+    
+            // Handle the response for /home as needed
+            xhrHome.onload = function () {
+                if (xhrHome.status === 200) {
+                    alert("Home loaded.");
+                } else {
+                    alert("Error loading home.");
+                }
+            };
+        }
+    
+        // Function to get a cookie by name
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+    </script>
+</body>
+</html>
