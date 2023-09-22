@@ -332,7 +332,7 @@ def extract_data_from_pdf(pdf_file_path, start_page=0, end_page=None):
 
 
 # Replace 'your_pdf_file.pdf' with the path to your PDF file.
-pdf_file_path = "./pdfScrapper/WFRPbase.pdf"
+pdf_file_path = "./WFRPbase.pdf"
 
 # Specify the range of pages you want to iterate through (start_page and end_page).
 start_page = 53
