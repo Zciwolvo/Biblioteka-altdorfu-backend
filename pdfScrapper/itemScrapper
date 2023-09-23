@@ -31,18 +31,20 @@ class Weapon:
         current_item = ""
 
         for item in perks:
-            if item in {"1", "2", "3", "4", "5", ","}:
+            if item in {"1", "2", "3", "4", "5", "1,", "2,", "3,", "4,", "5,"}:
                 current_item += " " + item
+                current_item = current_item.replace(",", "")
+                result.append(current_item.strip())
             else:
                 if current_item:
-                    current_item.replace(",", "")
+                    current_item = current_item.replace(",", "")
                     result.append(current_item.strip())
                 current_item = item
 
-        if current_item:
-            result.append(current_item.strip())
-
-        return result
+            if current_item:
+                current_item = current_item.replace(",", "")
+                result.append(current_item.strip())
+        return list(set(result))
 
     def to_json(self):
         weapon_json = {
@@ -88,7 +90,12 @@ def extract_data_from_pdf(pdf_file_path, start_page=0, end_page=None):
                 words = line.split()
                 if len(words) == 1:
                     subcategory = words[0]
-                elif len(words) >= 6 and words[0] != "*":
+                elif (
+                    len(words) >= 6
+                    and words[0] != "*"
+                    and words[0] != "**"
+                    and words[0] != "***"
+                ):
                     weapon_name = " ".join(
                         words[
                             : next(
@@ -120,9 +127,12 @@ def extract_data_from_pdf(pdf_file_path, start_page=0, end_page=None):
                     )
                     weight = words[price_index]
                     accessibility = words[price_index + 1]
-                    # Find the index of the word immediately following "damage"
                     damage_index = next(
-                        (i for i, x in enumerate(words) if x[0] == "+"),
+                        (
+                            i
+                            for i, x in enumerate(words)
+                            if x[0] == "+" or x[0] == "–" or x == "Specjalny***"
+                        ),
                         len(words),
                     )
                     weapon_range = words[words.index(accessibility) + 1 : damage_index]
@@ -147,7 +157,7 @@ def extract_data_from_pdf(pdf_file_path, start_page=0, end_page=None):
 pdf_file_path = "./WFRPbase.pdf"
 
 start_page = 294
-end_page = 295
+end_page = 296
 
 result = extract_data_from_pdf(pdf_file_path, start_page, end_page)
 
