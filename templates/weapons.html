@@ -7,7 +7,41 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dataset">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/classes">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/talents">Talents</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/weapons">Weapons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/spells">Spells</a>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link" >Currently: Weapons</p>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
+            <div class="input-group mb-3">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+            </div>
+        </div>
     {% for weapon in weapons %}
         <div class="card mt-4">
             <div class="card-body">
@@ -33,5 +67,30 @@
         </div>
     {% endfor %}
     </div>
+    <script>
+        const weapons = {{ weapons | tojson | safe }};
+        const container = $(".container");
+
+        function filterAndShowHideClasses() {
+            const searchValue = $("#searchInput").val().toLowerCase();
+
+            container.find(".card").each(function () {
+                const talent = $(this);
+                const talentText = talent.text().toLowerCase();
+
+                if (talentText.includes(searchValue)) {
+                    talent.show();
+                } else {
+                    talent.hide();
+                }
+            });
+        }
+
+        $("#searchButton").click(filterAndShowHideClasses);
+        $("#searchInput").on("input", filterAndShowHideClasses);
+
+        // Initial rendering
+        filterAndShowHideClasses();
+    </script>
 </body>
 </html>

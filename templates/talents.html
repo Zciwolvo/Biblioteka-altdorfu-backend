@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Warhammer 4th edition data</title>
+    <title>Display JSON Data</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,64 +29,38 @@
                     <a class="nav-link" href="/spells">Spells</a>
                 </li>
                 <li class="nav-item">
-                    <p class="nav-link" >Currently: Classes</p>
+                    <p class="nav-link">Currently: Talents</p>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
-            <div class="input-group mb-3">
+        <div class="input-group mb-3">
             <input type="text" class="form-control" id="searchInput" placeholder="Search...">
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
             </div>
         </div>
-        {% for class in classes %}
+        {% for talent in talents %}
         <div class="card mt-4">
             <div class="card-body">
-                <a data-toggle="collapse" href="#{{ class.category|replace(' ', '_') }}-{{ class.path|replace(' ', '_') }}-Collapse" role="button" aria-expanded="false" aria-controls="{{ class.category|replace(' ', '_') }}-{{ class.path|replace(' ', '_') }}-Collapse">
-                    <h4 class="card-title">Category: {{ class.category }}</h4>
-                    <p class="card-text"><strong>Path:</strong> {{ class.path }}</p>
+                <a data-toggle="collapse" href="#talentCollapse{{ loop.index }}" role="button" aria-expanded="false" aria-controls="talentCollapse{{ loop.index }}">
+                    <p class="card-text"><strong>Talent:</strong> {{ talent.name }}</p>
+                    <p class="card-text"><strong>Max:</strong> {{ talent.maksimum }}</p>
+                    <p class="card-text"><strong>Tests:</strong> {{ talent.tests }}</p>
                 </a>
-                <div class="collapse" id="{{ class.category|replace(' ', '_') }}-{{ class.path|replace(' ', '_') }}-Collapse">
-                    <h2 class="mt-4">Subclasses:</h2>
-                    <ul class="list-group">
-                        {% for subclass in class.subclasses %}
-                        <li class="list-group-item">
-                            <h5 class="card-title">Subclassname: {{ subclass.subclassname }}</h5>
-                            <p class="card-text"><strong>Status:</strong> {{ subclass.status }}</p>
-                            <p class="card-text"><strong>Skills:</strong></p>
-                            <ul>
-                                {% for skill in subclass.skills %}
-                                <li>{{ skill }}</li>
-                                {% endfor %}
-                            </ul>
-                            <p class="card-text"><strong>Talents:</strong></p>
-                            <ul>
-                                {% for talent in subclass.talents %}
-                                <li>{{ talent }}</li>
-                                {% endfor %}
-                            </ul>
-                            <p class="card-text"><strong>Equipment:</strong></p>
-                            <ul>
-                                {% for item in subclass.equipment %}
-                                <li>{{ item }}</li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                <div class="collapse" id="talentCollapse{{ loop.index }}">
+                    <h2 class="mt-4">Description:</h2>
+                    <p class="card-text">{{ talent.description }}</p>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        const classes = {{ classes | tojson | safe }};
+        const talents = {{ talents | tojson | safe }};
         const container = $(".container");
 
         function filterAndShowHideClasses() {
