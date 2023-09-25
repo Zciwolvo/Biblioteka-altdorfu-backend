@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warhammer 4th edition data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        {% for class in classes %}
+        <div class="card mt-4">
+            <div class="card-body">
+                <a data-toggle="collapse" href="#{{ class.category|replace(' ', '_') }}-{{ class.path|replace(' ', '_') }}-Collapse" role="button" aria-expanded="false" aria-controls="{{ class.category|replace(' ', '_') }}-{{ class.path|replace(' ', '_') }}-Collapse">
+                    <h4 class="card-title">Category: {{ class.category }}</h4>
+                    <p class="card-text"><strong>Path:</strong> {{ class.path }}</p>
+                </a>
+                <div class="collapse" id="{{ class.category|replace(' ', '_') }}-{{ class.path|replace(' ', '_') }}-Collapse">
+                    <h2 class="mt-4">Subclasses:</h2>
+                    <ul class="list-group">
+                        {% for subclass in class.subclasses %}
+                        <li class="list-group-item">
+                            <h5 class="card-title">Subclassname: {{ subclass.subclassname }}</h5>
+                            <p class="card-text"><strong>Status:</strong> {{ subclass.status }}</p>
+                            <p class="card-text"><strong>Skills:</strong></p>
+                            <ul>
+                                {% for skill in subclass.skills %}
+                                <li>{{ skill }}</li>
+                                {% endfor %}
+                            </ul>
+                            <p class="card-text"><strong>Talents:</strong></p>
+                            <ul>
+                                {% for talent in subclass.talents %}
+                                <li>{{ talent }}</li>
+                                {% endfor %}
+                            </ul>
+                            <p class="card-text"><strong>Equipment:</strong></p>
+                            <ul>
+                                {% for item in subclass.equipment %}
+                                <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display JSON Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle collapse behavior
+            $('.card a[data-toggle="collapse"]').on('click', function () {
+                // Close all open elements
+                $('.collapse.show').collapse('hide');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        {% for spell in spells %}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <a data-toggle="collapse" href="#spellCollapse{{ loop.index }}" role="button" aria-expanded="false" aria-controls="spellCollapse{{ loop.index }}">
+                        <h4 class="card-title">Name: {{ spell.name }}</h4>
+                        <p class="card-text"><strong>CN:</strong> {{ spell.cn }}</p>
+                        <p class="card-text"><strong>Range:</strong> {{ spell.range }}</p>
+                        <p class="card-text"><strong>Target:</strong> {{ spell.target }}</p>
+                        <p class="card-text"><strong>Duration:</strong> {{ spell.duration }}</p>
+                        <p class="card-text"><strong>Type:</strong> {{ spell.type }}</p>
+                    </a>
+                    <div class="collapse" id="spellCollapse{{ loop.index }}">
+                        <h2 class="mt-4">Description:</h2>
+                        <p class="card-text">{{ spell.description }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

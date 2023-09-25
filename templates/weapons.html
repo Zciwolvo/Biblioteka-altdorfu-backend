@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display JSON Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    {% for weapon in weapons %}
+        <div class="card mt-4">
+            <div class="card-body">
+                <a data-toggle="collapse" href="#weaponCollapse{{ loop.index }}" role="button" aria-expanded="false" aria-controls="weaponCollapse{{ loop.index }}">
+                    <h4 class="card-title">Category: {{ weapon.category }}</h4>
+                    <p class="card-text"><strong>Subcategory:</strong> {{ weapon.subcategory }}</p>
+                    <p class="card-text"><strong>Weapon Name:</strong> {{ weapon.weapon_name }}</p>
+                    <p class="card-text"><strong>Price:</strong> {{ weapon.price }}</p>
+                    <p class="card-text"><strong>Weight:</strong> {{ weapon.weight }}</p>
+                    <p class="card-text"><strong>Accessibility:</strong> {{ weapon.accessibility }}</p>
+                    <p class="card-text"><strong>Weapon Range:</strong> {{ weapon.weapon_range }}</p>
+                    <p class="card-text"><strong>Damage:</strong> {{ weapon.damage }}</p>
+                </a>
+                <div class="collapse" id="weaponCollapse{{ loop.index }}">
+                    <h2 class="mt-4">Pros and Cons:</h2>
+                    <ul class="list-group">
+                        {% for item in weapon.pros_and_cons %}
+                        <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

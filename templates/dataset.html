@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whole dataset</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search by Category">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+            </div>
+        </div>
+        <div id="container">
+            {% include 'classes.html' %}
+            {% include 'weapons.html' %}
+            {% include 'spells.html' %}
+        </div>
+    </div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const container = document.getElementById('container');
+
+    // Function to filter and show/hide class divs
+    function filterAndShowHideClasses() {
+        const searchValue = searchInput.value.toLowerCase();
+        const classDivs = container.querySelectorAll('.card');
+
+        classDivs.forEach(classDiv => {
+            const classInfo = classDiv.textContent.toLowerCase();
+            if (classInfo.includes(searchValue)) {
+                classDiv.style.display = 'block';
+            } else {
+                classDiv.style.display = 'none';
+            }
+        });
+    }
+
+    // Listen for input changes and filter the class divs
+    searchInput.addEventListener('input', filterAndShowHideClasses);
+
+    // Initial rendering
+    filterAndShowHideClasses();
+</script>
+
+
+</body>
+</html>
