@@ -48,7 +48,7 @@
         "weapon_range": "Bardzo krótki",
         "damage": "+BS+1",
         "pros_and_cons": [
-            "Tępy"
+            "Tępa"
         ]
     },
     {
@@ -106,7 +106,7 @@
         "weapon_range": "Daleki",
         "damage": "+BS+5",
         "pros_and_cons": [
-            "Ogłuszający"
+            "Ogłuszająca"
         ]
     },
     {
@@ -133,10 +133,10 @@
         "weapon_range": "Średni",
         "damage": "+BS+3",
         "pros_and_cons": [
-            "Nadziewający",
-            "Szybki",
-            "Precyzyjny",
-            "Tępy"
+            "Nadziewająca",
+            "Szybka",
+            "Precyzyjna",
+            "Tępa"
         ]
     },
     {
@@ -149,8 +149,8 @@
         "weapon_range": "Daleki",
         "damage": "+BS+4",
         "pros_and_cons": [
-            "Szybki",
-            "Nadziewający"
+            "Szybka",
+            "Nadziewająca"
         ]
     },
     {
@@ -163,7 +163,7 @@
         "weapon_range": "Kontaktowy",
         "damage": "+BS+0",
         "pros_and_cons": [
-            "Tępe"
+            "Tępa"
         ]
     },
     {
@@ -189,9 +189,9 @@
         "weapon_range": "Średni",
         "damage": "+BS+3",
         "pros_and_cons": [
-            "Dekoncentrujący",
-            "Nieprecyzyjny",
-            "Plączący"
+            "Dekoncentrująca",
+            "NiePrecyzyjna",
+            "Plącząca"
         ]
     },
     {
@@ -204,13 +204,13 @@
         "weapon_range": "Średni",
         "damage": "+BS+5",
         "pros_and_cons": [
-            "Dekoncentrujący",
-            "Plączący"
+            "Dekoncentrująca",
+            "Plącząca"
         ]
     },
     {
         "category": "Broń Biała",
-        "subcategory": "Plączący",
+        "subcategory": "Plącząca",
         "weapon_name": "(2R)Kiścień",
         "price": "3 ZK",
         "weight": "2",
@@ -218,10 +218,10 @@
         "weapon_range": "Daleki",
         "damage": "+BS+6",
         "pros_and_cons": [
-            "Ciężki",
-            "Dekoncentrujący",
-            "Plączący",
-            "Druzgoczący"
+            "Ciężka",
+            "Dekoncentrująca",
+            "Plącząca",
+            "Druzgocząca"
         ]
     },
     {
@@ -234,7 +234,7 @@
         "weapon_range": "Bardzo krótki",
         "damage": "+BS+2",
         "pros_and_cons": [
-            "Parujący"
+            "Parująca"
         ]
     },
     {
@@ -247,8 +247,8 @@
         "weapon_range": "Krótki",
         "damage": "+BS+3",
         "pros_and_cons": [
-            "mieczy Łamacz",
-            "Parujący"
+            "Łamacz mieczy",
+            "Parująca"
         ]
     },
     {
@@ -302,8 +302,8 @@
         "weapon_range": "2 Powszechna Daleki",
         "damage": "+BS+4",
         "pros_and_cons": [
-            "Ogłuszający",
-            "Parujący"
+            "Ogłuszająca",
+            "Parująca"
         ]
     },
     {
@@ -316,8 +316,8 @@
         "weapon_range": "Daleki",
         "damage": "+BS+5",
         "pros_and_cons": [
-            "Przebijający",
-            "Parujący"
+            "Przebijająca",
+            "Parująca"
         ]
     },
     {
@@ -330,9 +330,9 @@
         "weapon_range": "Daleki",
         "damage": "+BS+6",
         "pros_and_cons": [
-            "Ciężki",
-            "Druzgoczący",
-            "Rąbiący"
+            "Ciężka",
+            "Druzgocząca",
+            "Rąbiąca"
         ]
     },
     {
@@ -345,14 +345,14 @@
         "weapon_range": "Średni",
         "damage": "+BS+5",
         "pros_and_cons": [
-            "Nadziewający",
-            "Powolny",
-            "Przebijający"
+            "Nadziewająca",
+            "Powolna",
+            "Przebijająca"
         ]
     },
     {
         "category": "Broń Biała",
-        "subcategory": "Przebijający",
+        "subcategory": "Przebijająca",
         "weapon_name": "(2R)Młot bojowy",
         "price": "3 ZK",
         "weight": "3",
@@ -360,14 +360,14 @@
         "weapon_range": "Średni",
         "damage": "+BS+6",
         "pros_and_cons": [
-            "Przebijający",
-            "Ogłuszający",
-            "Powolny"
+            "Przebijająca",
+            "Ogłuszająca",
+            "Powolna"
         ]
     },
     {
         "category": "Broń Biała",
-        "subcategory": "Przebijający",
+        "subcategory": "Przebijająca",
         "weapon_name": "(2R)Miecz dwuręczny",
         "price": "10 ZK",
         "weight": "3",
@@ -375,8 +375,8 @@
         "weapon_range": "Daleki",
         "damage": "+BS+5",
         "pros_and_cons": [
-            "Rąbiący",
-            "Przebijający"
+            "Rąbiąca",
+            "Przebijająca"
         ]
     },
     {
@@ -389,8 +389,8 @@
         "weapon_range": "20",
         "damage": "+8",
         "pros_and_cons": [
-            "Niebezpieczny",
-            "Wybuchowy 3",
+            "Niebezpieczna",
+            "Wybuchowa 3",
             "Przeładowanie 2"
         ]
     },
@@ -404,8 +404,8 @@
         "weapon_range": "100",
         "damage": "+9",
         "pros_and_cons": [
-            "Celny",
-            "Precyzyjny",
+            "Celna",
+            "Precyzyjna",
             "Przeładowanie 4"
         ]
     },
@@ -419,7 +419,7 @@
         "weapon_range": "50",
         "damage": "+9",
         "pros_and_cons": [
-            "Niebezpieczny",
+            "Niebezpieczna",
             "Przeładowanie 3"
         ]
     },
@@ -433,7 +433,7 @@
         "weapon_range": "20",
         "damage": "+8",
         "pros_and_cons": [
-            "Pistolet",
+            "Pistolety",
             "Przeładowanie 1"
         ]
     },
@@ -447,8 +447,8 @@
         "weapon_range": "150",
         "damage": "+BS+4",
         "pros_and_cons": [
-            "Precyzyjny",
-            "Przebijający"
+            "Precyzyjna",
+            "Przebijająca"
         ]
     },
     {
@@ -461,7 +461,7 @@
         "weapon_range": "100",
         "damage": "+BS+4",
         "pros_and_cons": [
-            "Przebijający"
+            "Przebijająca"
         ]
     },
     {
@@ -500,7 +500,7 @@
         "weapon_range": "10",
         "damage": "+7",
         "pros_and_cons": [
-            "Pistolet"
+            "Pistolety"
         ]
     },
     {
@@ -540,7 +540,7 @@
         "weapon_range": "30",
         "damage": "+9",
         "pros_and_cons": [
-            "Niebezpieczny",
+            "Niebezpieczna",
             "Przeładowanie 5",
             "Wielostrzał 4"
         ]
@@ -555,8 +555,8 @@
         "weapon_range": "10",
         "damage": "+8",
         "pros_and_cons": [
-            "Niebezpieczny",
-            "Pistolet",
+            "Niebezpieczna",
+            "Pistolety",
             "Przeładowanie 4",
             "Wielostrzał 4"
         ]
@@ -571,7 +571,7 @@
         "weapon_range": "Bx2",
         "damage": "–",
         "pros_and_cons": [
-            "Unieruchamiający"
+            "Unieruchamiająca"
         ]
     },
     {
@@ -584,7 +584,7 @@
         "weapon_range": "6",
         "damage": "+BS+2",
         "pros_and_cons": [
-            "Unieruchamiający"
+            "Unieruchamiająca"
         ]
     },
     {
@@ -599,7 +599,7 @@
         "pros_and_cons": [
             "Druzgocząca",
             "Niebezpieczna",
-            "Wybuchowy 4"
+            "Wybuchowa 4"
         ]
     },
     {
@@ -612,8 +612,8 @@
         "weapon_range": "BS",
         "damage": "Specjalny***",
         "pros_and_cons": [
-            "Wybuchowy 4",
-            "Niebezpieczny"
+            "Wybuchowa 4",
+            "Niebezpieczna"
         ]
     },
     {
@@ -678,7 +678,7 @@
         "weapon_range": "BSx3",
         "damage": "+BS+3",
         "pros_and_cons": [
-            "Nadziewający"
+            "Nadziewająca"
         ]
     },
     {
@@ -704,7 +704,7 @@
         "weapon_range": "BSx2",
         "damage": "+BS+3",
         "pros_and_cons": [
-            "Rąbiący"
+            "Rąbiąca"
         ]
     },
     {
@@ -730,7 +730,7 @@
         "weapon_range": "jak broń",
         "damage": "-",
         "pros_and_cons": [
-            "Wybuchowy 1"
+            "Wybuchowa 1"
         ]
     },
     {
@@ -743,8 +743,8 @@
         "weapon_range": "jak broń",
         "damage": "+1",
         "pros_and_cons": [
-            "Nadziewający",
-            "Przekłuwający"
+            "Nadziewająca",
+            "Przekłuwająca"
         ]
     },
     {
@@ -785,7 +785,7 @@
         "pros_and_cons": [
             "Celna",
             "Nadziewająca",
-            "Przekłuwający"
+            "Przekłuwająca"
         ]
     },
     {
@@ -811,7 +811,7 @@
         "weapon_range": "-10",
         "damage": "+1",
         "pros_and_cons": [
-            "Ogłuszający"
+            "Ogłuszająca"
         ]
     },
     {
@@ -824,7 +824,7 @@
         "weapon_range": "jak broń",
         "damage": "-",
         "pros_and_cons": [
-            "Ogłuszający"
+            "Ogłuszająca"
         ]
     }
 ]

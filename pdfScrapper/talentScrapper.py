@@ -42,7 +42,9 @@ def extract_data_from_pdf(pdf_file_path, start_page=0, end_page=None):
                     description = ""
                 else:
                     try:
-                        if lines[i + 1][0:8] != "Maksimum":
+                        if lines[i + 1][0:8] != "Maksimum" and not line.startswith(
+                            "Testy:"
+                        ):
                             description += line
                     except:
                         description += line
@@ -57,7 +59,7 @@ end_page = 148
 result = extract_data_from_pdf(pdf_file_path, start_page, end_page)
 
 # Save the extracted data to talents.json
-with open("talents.json", "w", encoding="utf-8") as json_file:
+with open("./pdfScrapper/talents.json", "w", encoding="utf-8") as json_file:
     json.dump(
         [talent.__dict__ for talent in result], json_file, ensure_ascii=False, indent=4
     )

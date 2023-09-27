@@ -1,0 +1,204 @@
+[
+    {
+        "category": "Pancerze",
+        "subcategory": "MIĘKKA SKÓRA",
+        "weapon_name": "Skórzana kurta",
+        "price": "12 s",
+        "weight": "1",
+        "accessibility": "Powszechna",
+        "penalty": "-",
+        "location": "ramiona, korpus",
+        "PP": "1",
+        "pros_and_cons": [
+            "–"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "MIĘKKA SKÓRA",
+        "weapon_name": "Skórzany kaftan",
+        "price": "10 s",
+        "weight": "1",
+        "accessibility": "Powszechna",
+        "penalty": "-",
+        "location": "korpus",
+        "PP": "1",
+        "pros_and_cons": [
+            "–"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "MIĘKKA SKÓRA",
+        "weapon_name": "Skórzane nogawice",
+        "price": "14 s",
+        "weight": "1",
+        "accessibility": "Powszechna",
+        "penalty": "-",
+        "location": "nogi",
+        "PP": "1",
+        "pros_and_cons": [
+            "–"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "MIĘKKA SKÓRA",
+        "weapon_name": "Skórzany hełm",
+        "price": "8 s",
+        "weight": "0",
+        "accessibility": "Powszechna",
+        "penalty": "-",
+        "location": "głowa",
+        "PP": "1",
+        "pros_and_cons": [
+            "Częściowy"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "SKÓRA HARTOWANA",
+        "weapon_name": "Kolet",
+        "price": "18 s",
+        "weight": "2",
+        "accessibility": "Ograniczona",
+        "penalty": "-",
+        "location": "korpus",
+        "PP": "2",
+        "pros_and_cons": [
+            "Wrażliwe punkty"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "KOLCZUGI",
+        "weapon_name": "Nogawice kolcze",
+        "price": "2 ZK",
+        "weight": "3",
+        "accessibility": "Ograniczona",
+        "penalty": "-",
+        "location": "nogi",
+        "PP": "2",
+        "pros_and_cons": [
+            "Giętki"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "KOLCZUGI",
+        "weapon_name": "Kolczuga",
+        "price": "3 ZK",
+        "weight": "3",
+        "accessibility": "Powszechna",
+        "penalty": "-",
+        "location": "ramiona, korpus",
+        "PP": "2",
+        "pros_and_cons": [
+            "Giętki"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "KOLCZUGI",
+        "weapon_name": "Czepiec kolczy",
+        "price": "1 ZK",
+        "weight": "2",
+        "accessibility": "Ograniczona",
+        "penalty": "-10 do percepcji",
+        "location": "głowa",
+        "PP": "2",
+        "pros_and_cons": [
+            "Częściowy",
+            "Giętki"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "KOLCZUGI",
+        "weapon_name": "Kaftan kolczy",
+        "price": "2 ZK",
+        "weight": "2",
+        "accessibility": "Ograniczona",
+        "penalty": "-",
+        "location": "korpus",
+        "PP": "2",
+        "pros_and_cons": [
+            "Giętki"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "PŁYTOWE",
+        "weapon_name": "Napierśnik",
+        "price": "10 ZK",
+        "weight": "3",
+        "accessibility": "Ograniczona",
+        "penalty": "-",
+        "location": "korpus",
+        "PP": "2",
+        "pros_and_cons": [
+            "Nieprzebijalny",
+            "Wrażliwe punkty"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "PŁYTOWE",
+        "weapon_name": "Hełm otwarty",
+        "price": "2 ZK",
+        "weight": "1",
+        "accessibility": "Powszechna",
+        "penalty": "-10 do percepcji",
+        "location": "głowa",
+        "PP": "2",
+        "pros_and_cons": [
+            "Częściowy"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "PŁYTOWE",
+        "weapon_name": "Naramienniki",
+        "price": "8 ZK",
+        "weight": "3",
+        "accessibility": "Rzadka",
+        "penalty": "-",
+        "location": "ramiona",
+        "PP": "2",
+        "pros_and_cons": [
+            "Nieprzebijalny",
+            "Wrażliwe punkty"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "PŁYTOWE",
+        "weapon_name": "Nagolenniki płytowe",
+        "price": "10 ZK",
+        "weight": "3",
+        "accessibility": "Rzadka",
+        "penalty": "-10 do skradania",
+        "location": "nogi",
+        "PP": "2",
+        "pros_and_cons": [
+            "Nieprzebijalny",
+            "Wrażliwe punkty"
+        ]
+    },
+    {
+        "category": "Pancerze",
+        "subcategory": "PŁYTOWE",
+        "weapon_name": "Hełm",
+        "price": "3 ZK",
+        "weight": "2",
+        "accessibility": "Rzadka",
+        "penalty": "-20 do percepcji",
+        "location": "głowa",
+        "PP": "2",
+        "pros_and_cons": [
+            "Nieprzebijalny",
+            "Wrażliwe punkty"
+        ]
+    }
+]
+
