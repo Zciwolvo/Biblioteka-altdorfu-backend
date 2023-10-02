@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display JSON Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dataset">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/classes">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rules">rules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/weapons">Weapons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/spells">Spells</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rules">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link">Currently: rules</p>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+            </div>
+        </div>
+        {% for rule in rules %}
+        <div class="card mt-4">
+            <div class="card-body">
+                <a data-toggle="collapse" href="#ruleCollapse{{ loop.index }}" role="button" aria-expanded="false" aria-controls="ruleCollapse{{ loop.index }}">
+                    <p class="card-text"><strong>rule:</strong> {{ rule.name }}</p>
+                </a>
+                <div class="collapse" id="ruleCollapse{{ loop.index }}">
+                    <h2 class="mt-4">Description:</h2>
+                    <p class="card-text">{{ rule.description | safe }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        const rules = {{ rules | tojson | safe }};
+        const container = $(".container");
+
+        function filterAndShowHideClasses() {
+            const searchValue = $("#searchInput").val().toLowerCase();
+
+            container.find(".card").each(function () {
+                const rule = $(this);
+                const ruleText = rule.text().toLowerCase();
+
+                if (ruleText.includes(searchValue)) {
+                    rule.show();
+                } else {
+                    rule.hide();
+                }
+            });
+        }
+
+        $("#searchButton").click(filterAndShowHideClasses);
+        $("#searchInput").on("input", filterAndShowHideClasses);
+
+        // Initial rendering
+        filterAndShowHideClasses();
+    </script>
+</body>
+</html>

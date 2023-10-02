@@ -15,11 +15,18 @@ def display_json():
             weapons = json.load(json_file)
         with open("./src/data/talents.json", "r", encoding="utf-8") as json_file:
             talents = json.load(json_file)
+        with open("./src/data/rules.json", "r", encoding="utf-8") as json_file:
+            rules = json.load(json_file)
     except FileNotFoundError:
         classes, spells, weapons, talents = [], [], [], []
 
     return render_template(
-        "dataset.html", classes=classes, spells=spells, weapons=weapons, talents=talents
+        "dataset.html",
+        classes=classes,
+        spells=spells,
+        weapons=weapons,
+        talents=talents,
+        rules=rules,
     )
 
 
@@ -65,3 +72,14 @@ def display_talents():
         classes = []
 
     return render_template("talents.html", talents=classes)
+
+
+@dataset_blueprint.route("/rules")
+def display_rules():
+    try:
+        with open("./src/data/rules.json", "r", encoding="utf-8") as json_file:
+            classes = json.load(json_file)
+    except FileNotFoundError:
+        classes = []
+
+    return render_template("rules.html", rules=classes)
